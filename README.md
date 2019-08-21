@@ -1,4 +1,5 @@
 
+
 # Client Image Loader
 [Experimental] Client Image Loader is a DLL that you can inject into your MapleStory client. (It's not complete yet)
 
@@ -25,5 +26,7 @@ Now your client should be automatically load with the compiled DLL already injec
 
 ## Credits
 @[**buttbeam**](http://forum.ragezone.com/members/2000258756.html) ~ Everything? [Released this](https://gist.github.com/y785/3f13026d33b5a7f0edab0bd60f4eed36).
+
 @[**Darter**](http://forum.ragezone.com/members/450249.html) ~ This project is based on his [AuthHook](https://github.com/RajanGrewal/AuthHook/) release.
+
 @[**Eric**](http://forum.ragezone.com/members/801110.html "Eric is online now") ~ I learnt a lot from him.
