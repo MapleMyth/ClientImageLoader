@@ -9,7 +9,7 @@
 There are a couple of advantages especially for WZ editors trying to get new content to work in older versions.
 
  - Eliminate the GFX glitches and memory leaks making the client more stable.
-- Push WZ updates and patches to your users faster, easier and less bandwidth consuming.
+- Push file updates and patches to your users faster, easier and less bandwidth consuming.
 -  Your game installation directory and file structure will look well organized.
 - It's cool and interesting?
 
