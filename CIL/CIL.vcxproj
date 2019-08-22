@@ -94,7 +94,6 @@
     <ClInclude Include="APIDummy.h" />
     <ClInclude Include="detours.h" />
     <ClInclude Include="CIL.h" />
-    <ClInclude Include="Resman.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
