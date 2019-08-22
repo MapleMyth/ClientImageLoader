@@ -1,7 +1,26 @@
 #include "Resman.h"
 
-typedef void*(__fastcall* CWvsApp__InitializeResMan_t)(void*, void*, void*);
-typedef void*(__fastcall* Ztl_bstr_t)(void*, void*, void*);
+typedef void(__fastcall* CWvsApp__InitializeResMan_t)(CWvsApp* ecx, void* edx);
+
+typedef void*(__cdecl* get_generic_t)();
+typedef void(__cdecl* PcCreateObject_t)(void *, void *);
+
+struct CWvsApp
+{
+	/*Nothing for now*/
+};
+
+struct Ztl_bstr_t
+{
+	struct DATA
+	{
+		wchar_t *m_wstr;
+		char *m_str;
+		unsigned int m_RefCount;
+	};
+	
+	Ztl_bstr_t::DATA* m_Data;
+}
 
 enum RESMAN_PARAM {
 	RC_AUTO_SERIALIZE = 0x1,
@@ -20,7 +39,7 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 	static auto CWvsApp__InitializeResMan = reinterpret_cast<CWvsApp__InitializeResMan_t>(0x008E7BA0);
 	static auto Ztl_bstr = reinterpret_cast<Ztl_bstr_t>(0x008E7C01);
 
-	CWvsApp__InitializeResMan_t Hook = [](void* ecx, void* edx, void* cwvsapp) -> void* {
+	CWvsApp__InitializeResMan_t Hook = [](CWvsApp* ecx, void* edx) -> void {
 
 		auto g_rm = get_rm();
 
@@ -83,27 +102,18 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		ppRoot = _com_IWzNameSpace_arrow(get_root(), nullptr); // *((void**)g_root)
 		auto ejhafaf = IWZNameSpace__Mount(ppRoot, nullptr, *p_bstr_path, p_down, 0);
 
-		return (void*)0;
 	};
 
 
 	return SetHook(bEnable, reinterpret_cast<void**>(&CWvsApp__InitializeResMan), Hook);
 }
 
-VOID * get_rm()
-{
-	return (void*)0;
-}
 
-VOID * get_root()
-{
-	return (void*)0;
-}
+auto get_rm = reinterpret_cast<get_generic_t>(0x00000000);
+auto get_root = reinterpret_cast<get_generic_t>(0x00000000);
+auto PcCreateObject_IWzResMan = reinterpret_cast<PcCreateObject_t>(0x00000000);
 
-VOID * PcCreateObject_IWzResMan(void *, void *)
-{
-	return (void*)0;
-}
+//Convert the rest of the functions...
 
 VOID * _com_IWzResMan_arrow(void *, void *)
 {
