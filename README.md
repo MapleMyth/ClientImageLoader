@@ -1,5 +1,3 @@
-
-
 # Client Image Loader
 [Experimental] Client Image Loader is a DLL that can be injected into a MapleStory client to load from image data files. (It's not complete yet)
 
@@ -13,6 +11,9 @@ There are a couple of advantages especially for WZ editors trying to get new con
 - Push file updates and patches to your users faster, easier and less bandwidth consuming.
 -  Your game installation directory and file structure will look well organized.
 - It's cool and interesting?
+
+## How to Configure?
+You need to specify the correct function addresses in "Resman.cpp" for your particular client version.
 
 ## How to Inject?
 
