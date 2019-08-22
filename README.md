@@ -1,7 +1,7 @@
 
 
 # Client Image Loader
-[Experimental] Client Image Loader is a DLL that you can inject into your MapleStory client to load from image data files. (It's not complete yet)
+[Experimental] Client Image Loader is a DLL that can inject into your MapleStory client to load from image data files. (It's not complete yet)
 
 ## What Does it Do?
  It will make MapleStory clients load from "*.img" files inside a data directory "./Data" instead of "*.wz" compressed files at the index.
