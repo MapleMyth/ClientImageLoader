@@ -22,7 +22,7 @@ There are a couple of advantages especially for WZ editors trying to get new con
  3. Proceed to "Import Adder" and click "Add" then select the compiled DLL file.
  4. Import the "APIDummy" export that you just added.
  5. Click "Rebuild Import Table" then save the file.
-Now your client should be automatically load with the compiled DLL already injected.
+Now your client should automatically load with the compiled DLL already injected.
 
 ## Credits
 @[**buttbeam**](http://forum.ragezone.com/members/2000258756.html) ~ Everything? [Released this](https://gist.github.com/y785/3f13026d33b5a7f0edab0bd60f4eed36).
