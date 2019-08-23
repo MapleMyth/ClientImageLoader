@@ -30,45 +30,53 @@ struct Ztl_bstr_t
 };
 
 typedef void(__fastcall* CWvsApp__InitializeResMan_t)(CWvsApp* ecx, void* edx);
-typedef void*(__cdecl* get_generic_t)();
+typedef void*(__cdecl* get_rm_t)();
 typedef void(__cdecl* PcCreateObject_IWzResMan_t)(void *, void *);
 typedef void*(__cdecl* _com_IWzResMan_arrow_t)(void *, decltype(nullptr));
-typedef void*(__cdecl* _com_IWzFileSystem_arrow_t)(int *, decltype(nullptr));
-typedef void(__cdecl* IWzResMan__SetResManParam_t)(void *, decltype(nullptr), int a, int b, int c);
+typedef HRESULT(__fastcall* IWzResMan__SetResManParam_t)(void *, decltype(nullptr), int a, int b, int c);
+typedef void*(__cdecl* get_root_t)();
 typedef void(__cdecl* PcCreateObject_IWzNameSpace_t)(void *, void *);
+typedef HRESULT(__cdecl* PcSetRootNameSpace_t)(void *);
 typedef void*(__cdecl* _com_IWzNameSpace_deref_t)(void *, decltype(nullptr));
-typedef void(__cdecl* PcSetRootNameSpace_t)(void *);
-typedef void*(__cdecl* _com_IWzFileSystem_ptr_t)(int *, decltype(nullptr));
+typedef void*(__cdecl* _com_IWzNameSpace_arrow_t)(void *, decltype(nullptr));
+typedef HRESULT(__fastcall* IWZNameSpace__Mount_t)(void *, decltype(nullptr), Ztl_bstr_t, void *, int a);
 typedef void(__cdecl* PcCreateObject_IWzFileSystem_t)(void *, void *);
 typedef void(__cdecl* CWvsApp__Dir_BackSlashToSlash_t)(char *);
 typedef void(__cdecl* CWvsApp__Dir_upDir_t)(char *);
-typedef void*(__cdecl* IWzFileSystem__Init_t)(void *, decltype(nullptr), Ztl_bstr_t);
 typedef void(__cdecl* ztl_bstr_constructor_t)(void *, decltype(nullptr), const char *);
-typedef void*(__cdecl* _com_IWzNameSpace_arrow_t)(void *, decltype(nullptr));
+typedef HRESULT(__fastcall* IWzFileSystem__Init_t)(void *, decltype(nullptr), Ztl_bstr_t);
+typedef void*(__cdecl* _com_IWzFileSystem_arrow_t)(int *, decltype(nullptr));
+typedef void*(__fastcall* _com_IWzFileSystem_ptr_t)(int *, decltype(nullptr));
 typedef void*(__cdecl* _com_IWzPackage_deref_t)(void *, decltype(nullptr));
-typedef void*(__cdecl* IWZNameSpace__Mount_t)(void *, decltype(nullptr), Ztl_bstr_t, void *, int a);
 
 BOOL Hook_InitializeResMan(BOOL bEnable) {
 
-	static auto CWvsApp__InitializeResMan = reinterpret_cast<CWvsApp__InitializeResMan_t>(0x00000000);
-	static auto get_rm = reinterpret_cast<get_generic_t>(0x00000000);
-	static auto get_root = reinterpret_cast<get_generic_t>(0x00000000);
+	// Init
+	static auto CWvsApp__InitializeResMan = reinterpret_cast<CWvsApp__InitializeResMan_t>(0x008E7BA0);
+
+	// IWZ
+	static auto get_rm = reinterpret_cast<get_rm_t>(0x00000000);
 	static auto PcCreateObject_IWzResMan = reinterpret_cast<PcCreateObject_IWzResMan_t>(0x00000000);
-	static auto _com_IWzResMan_arrow = reinterpret_cast<_com_IWzResMan_arrow_t>(0x00000000);
-	static auto _com_IWzFileSystem_arrow = reinterpret_cast<_com_IWzFileSystem_arrow_t>(0x00000000);
 	static auto IWzResMan__SetResManParam = reinterpret_cast<IWzResMan__SetResManParam_t>(0x00000000);
+	static auto _com_IWzResMan_arrow = reinterpret_cast<_com_IWzResMan_arrow_t>(0x00000000);
+
+	// Name Space
+	static auto get_root = reinterpret_cast<get_root_t>(0x00000000);
 	static auto PcCreateObject_IWzNameSpace = reinterpret_cast<PcCreateObject_IWzNameSpace_t>(0x00000000);
-	static auto _com_IWzNameSpace_deref = reinterpret_cast<_com_IWzNameSpace_deref_t>(0x00000000);
 	static auto PcSetRootNameSpace = reinterpret_cast<PcSetRootNameSpace_t>(0x00000000);
-	static auto _com_IWzFileSystem_ptr = reinterpret_cast<_com_IWzFileSystem_ptr_t>(0x00000000);
+	static auto IWZNameSpace__Mount = reinterpret_cast<IWZNameSpace__Mount_t>(0x00000000);
+	static auto _com_IWzNameSpace_deref = reinterpret_cast<_com_IWzNameSpace_deref_t>(0x00000000);
+	static auto _com_IWzNameSpace_arrow = reinterpret_cast<_com_IWzNameSpace_arrow_t>(0x00000000);
+
+	// Filesystem
 	static auto PcCreateObject_IWzFileSystem = reinterpret_cast<PcCreateObject_IWzFileSystem_t>(0x00000000);
 	static auto CWvsApp__Dir_BackSlashToSlash = reinterpret_cast<CWvsApp__Dir_BackSlashToSlash_t>(0x00000000);
 	static auto CWvsApp__Dir_upDir = reinterpret_cast<CWvsApp__Dir_upDir_t>(0x00000000);
-	static auto IWzFileSystem__Init = reinterpret_cast<IWzFileSystem__Init_t>(0x00000000);
 	static auto ztl_bstr_constructor = reinterpret_cast<ztl_bstr_constructor_t>(0x00000000);
-	static auto _com_IWzNameSpace_arrow = reinterpret_cast<_com_IWzNameSpace_arrow_t>(0x00000000);
+	static auto IWzFileSystem__Init = reinterpret_cast<IWzFileSystem__Init_t>(0x00000000);
+	static auto _com_IWzFileSystem_arrow = reinterpret_cast<_com_IWzFileSystem_arrow_t>(0x00000000);
+	static auto _com_IWzFileSystem_ptr = reinterpret_cast<_com_IWzFileSystem_ptr_t>(0x00000000);
 	static auto _com_IWzPackage_deref = reinterpret_cast<_com_IWzPackage_deref_t>(0x00000000);
-	static auto IWZNameSpace__Mount = reinterpret_cast<IWZNameSpace__Mount_t>(0x00000000);
 
 	CWvsApp__InitializeResMan_t Hook = [](CWvsApp* ecx, void* edx) -> void {
 
@@ -87,11 +95,10 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		void* pIWzNameSpace_Instance = _com_IWzNameSpace_deref(g_root, nullptr);
 		PcSetRootNameSpace(pIWzNameSpace_Instance); // PcSetRootNameSpace(*((void**)g_root));
 
+		// Initialize FileSystem
 		int pIWzFileSystem;
 		void* com_iwfsp = _com_IWzFileSystem_ptr(&pIWzFileSystem, nullptr);
 		PcCreateObject_IWzFileSystem((void*)L"NameSpace#FileSystem", com_iwfsp);
-
-		// Initialize FileSystem
 		char sStartPath[MAX_PATH];
 		GetModuleFileNameA(NULL, sStartPath, MAX_PATH);
 		CWvsApp__Dir_BackSlashToSlash(sStartPath);
