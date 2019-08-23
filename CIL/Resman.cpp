@@ -95,7 +95,7 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		void* pIWzNameSpace_Instance = _com_IWzNameSpace_deref(g_root, nullptr);
 		PcSetRootNameSpace(pIWzNameSpace_Instance); // PcSetRootNameSpace(*((void**)g_root));
 
-													// Initialize FileSystem
+		// Initialize FileSystem
 		int pIWzFileSystem;
 		void* com_iwfsp = _com_IWzFileSystem_ptr(&pIWzFileSystem, nullptr);
 		PcCreateObject_IWzFileSystem((void*)L"NameSpace#FileSystem", com_iwfsp);
