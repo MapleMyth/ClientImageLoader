@@ -25,4 +25,4 @@ _com_IWzResMan_arrow = 0x004AEDF0
 _com_IWzNameSpace_arrow = 0x00533980
 _com_IWzFileSystem_arrow = 0x01A8B050
 _com_IWzNameSpace_deref = 0x01A8C810
-_com_IWzPackage_deref = 0x01A8C7E0
+_com_IWzPackage_deref = 0x01A8B080
