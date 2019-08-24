@@ -39,8 +39,8 @@ typedef void(__cdecl* PcCreateObject_IWzNameSpace_t)(void *, void *);
 typedef HRESULT(__cdecl* PcSetRootNameSpace_t)(void *);
 typedef HRESULT(__fastcall* IWZNameSpace__Mount_t)(void *, void *, Ztl_bstr_t, void *, int a);
 typedef void(__cdecl* PcCreateObject_IWzFileSystem_t)(void *, void *);
-typedef void(__cdecl* CWvsApp__Dir_BackSlashToSlash_t)(char *);
-typedef void(__cdecl* CWvsApp__Dir_upDir_t)(char *);
+//typedef void(__cdecl* CWvsApp__Dir_BackSlashToSlash_t)(char *);
+//typedef void(__cdecl* CWvsApp__Dir_upDir_t)(char *);
 typedef void(__cdecl* ztl_bstr_constructor_t)(void *, void *, const char *);
 typedef HRESULT(__fastcall* IWzFileSystem__Init_t)(void *, void *, Ztl_bstr_t);
 typedef void*(__fastcall* _com_IWzFileSystem_ptr_t)(int *, void *);
@@ -49,6 +49,38 @@ typedef void*(__fastcall* _com_IWzNameSpace_arrow_t)(void *, void *);
 typedef void*(__fastcall* _com_IWzFileSystem_arrow_t)(int *, void *);
 typedef void*(__fastcall* _com_IWzNameSpace_deref_t)(void *, void *);
 typedef void*(__fastcall* _com_IWzPackage_deref_t)(void *, void *);
+
+void __cdecl CWvsApp__Dir_upDir(char *sDir)
+{
+	size_t v1 = strlen(sDir);
+
+	if (v1 > 0 && sDir[v1 - 1] == '/')
+		sDir[v1 - 1] = 0;
+
+	size_t v2 = strlen(sDir) - 1;
+
+	if (v2 > 0)
+	{
+		while (sDir[v2] != '/')
+		{
+			if (--v2 <= 0)
+				return;
+		}
+
+		sDir[v2] = 0;
+	}
+}
+
+void __cdecl CWvsApp__Dir_BackSlashToSlash(char *sDir)
+{
+	size_t v1 = strlen(sDir);
+
+	for (int i = 0; i < v1; ++i)
+	{
+		if (sDir[i] == '\\')
+			sDir[i] = '/';
+	}
+}
 
 BOOL Hook_InitializeResMan(BOOL bEnable) {
 
@@ -68,8 +100,6 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 
 	// FileSystem
 	static auto PcCreateObject_IWzFileSystem = reinterpret_cast<PcCreateObject_IWzFileSystem_t>(0x00000000);
-	static auto CWvsApp__Dir_BackSlashToSlash = reinterpret_cast<CWvsApp__Dir_BackSlashToSlash_t>(0x00000000);
-	static auto CWvsApp__Dir_upDir = reinterpret_cast<CWvsApp__Dir_upDir_t>(0x00000000);
 	static auto ztl_bstr_constructor = reinterpret_cast<ztl_bstr_constructor_t>(0x00000000);
 	static auto IWzFileSystem__Init = reinterpret_cast<IWzFileSystem__Init_t>(0x00000000);
 
