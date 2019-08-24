@@ -1,7 +1,7 @@
 // Init
 CWvsApp__InitializeResMan = 0x01A958C0
 
-// ResMan - (0x00000000) means unknown yet.
+// ResMan
 get_rm = 0x004AECB0
 PcCreateObject_IWzResMan = 0x01A8DEF0
 IWzResMan__SetResManParam = 0x01A8A520
