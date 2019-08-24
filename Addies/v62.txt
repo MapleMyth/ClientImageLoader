@@ -1,0 +1,28 @@
+// Init
+CWvsApp__InitializeResMan = 0x008E7BA0
+
+// ResMan - (0x00000000) means unknown yet.
+get_rm = 0x00405A1D
+PcCreateObject_IWzResMan = 0x00000000
+IWzResMan__SetResManParam = 0x00000000
+
+// NameSpace
+get_root = 0x00559A18
+PcCreateObject_IWzNameSpace = 0x00000000
+PcSetRootNameSpace = 0x00000000
+IWZNameSpace__Mount = 0x0082752F
+
+// Filesystem
+PcCreateObject_IWzFileSystem = 0x00829E60
+CWvsApp__Dir_BackSlashToSlash = 0x00000000
+CWvsApp__Dir_upDir = 0x00000000
+ztl_bstr_constructor = 0x00000000
+IWzFileSystem__Init = 0x00827589
+
+// Pointers
+_com_IWzFileSystem_ptr = 0x00000000
+_com_IWzResMan_arrow = 0x00000000
+_com_IWzNameSpace_arrow = 0x00000000
+_com_IWzFileSystem_arrow = 0x00000000
+_com_IWzNameSpace_deref = 0x00000000
+_com_IWzPackage_deref = 0x00000000

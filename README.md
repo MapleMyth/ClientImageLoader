@@ -13,9 +13,9 @@ There are a couple of advantages especially for WZ editors trying to get new con
 - It's cool and interesting?
 
 ## How
-You need to specify the correct function addresses in "Resman.cpp" for your particular client version.
+You need to specify the correct function addresses in "Resman.cpp" for your particular client version. In fact, you should find information in the "Addies" directory for the major versions.
 
- Now, there are many ways to inject a DLL to your MapleStory client but this project is already configured with the APIDummy export method. So, after you compile this project resulting in a DLL file:
+ So, after you compile this project resulting in a DLL file you need to inject it. Now, there are many ways to inject a DLL to your MapleStory client but this project is already configured with the APIDummy export method.
  1. Download CFF Explorer.
  2. Go to "File > Open" and select your "ijl15.dll" inside your MapleStory directory.
  3. Proceed to "Import Adder" and click "Add" then select the compiled DLL file.
