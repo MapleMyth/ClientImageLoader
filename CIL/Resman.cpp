@@ -43,10 +43,10 @@ typedef HRESULT(__fastcall* IWZNameSpace__Mount_t)(void *, void *, Ztl_bstr_t, v
 typedef void(__cdecl* PcCreateObject_IWzFileSystem_t)(void *, void *);
 typedef void(__cdecl* ztl_bstr_constructor_t)(void *, void *, const char *);
 typedef HRESULT(__fastcall* IWzFileSystem__Init_t)(void *, void *, Ztl_bstr_t);
-typedef void*(__fastcall* _com_IWzFileSystem_ptr_t)(int *, void *);
+typedef void*(__fastcall* _com_IWzFileSystem_ptr_t)(void *, void *);
 typedef void*(__fastcall* _com_IWzResMan_arrow_t)(void *, void *);
 typedef void*(__fastcall* _com_IWzNameSpace_arrow_t)(void *, void *);
-typedef void*(__fastcall* _com_IWzFileSystem_arrow_t)(int *, void *);
+typedef void*(__fastcall* _com_IWzFileSystem_arrow_t)(void *, void *);
 typedef void*(__fastcall* _com_IWzNameSpace_deref_t)(void *, void *);
 typedef void*(__fastcall* _com_IWzPackage_deref_t)(void *, void *);
 
@@ -76,15 +76,15 @@ auto _com_IWzFileSystem_arrow = reinterpret_cast<_com_IWzFileSystem_arrow_t>(0x0
 auto _com_IWzNameSpace_deref = reinterpret_cast<_com_IWzNameSpace_deref_t>(0x00000000);
 auto _com_IWzPackage_deref = reinterpret_cast<_com_IWzPackage_deref_t>(0x00000000);
 
-// Harde Coded Functions
+// Hard Coded Functions
 void* __cdecl get_rm()
 {
-	return *((void**) g_rm);
+	return *((void**)g_rm);
 }
 
 void* __cdecl get_root()
 {
-	return *((void**) g_root);
+	return *((void**)g_root);
 }
 
 void __cdecl CWvsApp__Dir_upDir(char *sDir)
@@ -141,7 +141,7 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		void* pIWzNameSpace_Instance = _com_IWzNameSpace_deref(g_root, nullptr);
 		PcSetRootNameSpace(pIWzNameSpace_Instance); // PcSetRootNameSpace(*((void**)g_root))
 
-		// Initialize FileSystem
+													// Initialize FileSystem
 		int pIWzFileSystem;
 		void* com_iwfsp = _com_IWzFileSystem_ptr(&pIWzFileSystem, nullptr);
 		PcCreateObject_IWzFileSystem((void*)L"NameSpace#FileSystem", com_iwfsp);

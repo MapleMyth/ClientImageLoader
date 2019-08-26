@@ -9,7 +9,7 @@ IWzResMan__SetResManParam = 0x00000000
 // NameSpace
 get_root = 0x0097C1A0
 PcCreateObject_IWzNameSpace = 0x00829DFB
-PcSetRootNameSpace = 0x00403384
+PcSetRootNameSpace = 0x00000000
 IWZNameSpace__Mount = 0x0082752F
 
 // Filesystem
