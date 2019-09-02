@@ -1,28 +1,28 @@
 // Init
-CWvsApp__InitializeResMan = 0x00000000
+CWvsApp__InitializeResMan = 0x009F7159
 
 // ResMan - (0x00000000) means unknown yet.
-get_rm = 0x00000000
-PcCreateObject_IWzResMan = 0x00000000
-IWzResMan__SetResManParam = 0x00000000
+get_rm = 0x00BF14E8
+PcCreateObject_IWzResMan = 0x009FAF55
+IWzResMan__SetResManParam = 0x0040387E
 
 // NameSpace
-get_root = 0x00000000
-PcCreateObject_IWzNameSpace = 0x00000000
-PcSetRootNameSpace = 0x00000000
-IWZNameSpace__Mount = 0x00000000
+get_root = 0x00BF14E0
+PcCreateObject_IWzNameSpace = 0x009FAFBA
+PcSetRootNameSpace = 0x009F7230
+IWZNameSpace__Mount = 0x009F790A
 
 // Filesystem
-PcCreateObject_IWzFileSystem = 0x00000000
-CWvsApp__Dir_BackSlashToSlash = 0x00000000
-CWvsApp__Dir_upDir = 0x00000000
-ztl_bstr_constructor = 0x00000000
-IWzFileSystem__Init = 0x00000000
+PcCreateObject_IWzFileSystem = 0x009FB01F
+CWvsApp__Dir_BackSlashToSlash = 0x00000000 ( Is this even necessary any more ??)
+CWvsApp__Dir_upDir = 0x00000000 ( Is this even necessary any more ??)
+ztl_bstr_constructor = 0x00406301
+IWzFileSystem__Init = 0x009F7964
 
 // Pointers
-_com_IWzFileSystem_ptr = 0x00000000
-_com_IWzResMan_arrow = 0x00000000
-_com_IWzNameSpace_arrow = 0x00000000
-_com_IWzFileSystem_arrow = 0x00000000
-_com_IWzNameSpace_deref = 0x00000000
-_com_IWzPackage_deref = 0x00000000
+_com_IWzFileSystem_ptr = 0x009F9D7F
+_com_IWzResMan_arrow = 0x00402680
+_com_IWzNameSpace_arrow = 0x005DB9C1
+_com_IWzFileSystem_arrow = 0x009FA12B
+_com_IWzNameSpace_deref = 0x009F998C
+_com_IWzPackage_deref = 0x009FA14E
