@@ -23,8 +23,9 @@ There are a couple of advantages especially for WZ editors trying to get new con
  5. Import the "APIDummy" export that you just added.
  6. Click "Rebuild Import Table" then save the file.
     ( Now your client should automatically load with the compiled DLL already injected.)
- 7. Use @[Stredit](http://forum.ragezone.com/f921/release-stredit-localhost-editor-810762/) to change the strings
-    "../Data" and "../DataT" to "Data" and "DataT".  (IDs: 2294 and 2295)
+ 7. Place the generated .dll in your MS v83 Folder.
+ 7. Use [Stredit](http://forum.ragezone.com/f921/release-stredit-localhost-editor-810762/) to modify your v83 client's strings
+    "../Data" and "../DataT" to "Data" and "DataT".  (IDs: 2294 and 2295).
 
 ## Lets try it!
 Now, make sure that you have List.wz in the same folder of your client.exe and the generated .dll hooked to your Ijl15.dll.
