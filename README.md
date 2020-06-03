@@ -43,6 +43,8 @@ This has been tested using HeavenMS (Credits to @[**Ronan**](https://github.com/
 ## Credits for Img Loading
 @[**MapleMyth**](https://github.com/MapleMyth/) ~ forked from MapleMyth/ClientImageLoader
 
+@[**Feras**](http://forum.ragezone.com/members/2000265649.html) ~ hints for v83 support.
+
 @[**XIEJIASHU**](http://forum.ragezone.com/members/2000286887.html) ~ stdcall issue in IWzResMan_SetResMan.
 
 @[**buttbeam**](http://forum.ragezone.com/members/2000258756.html) ~ Everything? [Released this](https://gist.github.com/y785/3f13026d33b5a7f0edab0bd60f4eed36).
