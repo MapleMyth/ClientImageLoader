@@ -31,7 +31,7 @@ There are a couple of advantages especially for WZ editors trying to get new con
 Now, make sure that you have List.wz in the same folder of your client.exe and the generated .dll hooked to your Ijl15.dll.
 Try to make it so you have the following structure:
 
-<img src="https://i.imgur.com/ospd4tF.png"  height="auto">
+<img src="https://i.imgur.com/LsKgdt5.png"  height="auto">
 
 
 Now run your v83 game client and see the magic happen!
