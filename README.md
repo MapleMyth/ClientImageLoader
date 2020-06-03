@@ -40,6 +40,8 @@ This has been tested using HeavenMS (Credits to @[**Ronan**](https://github.com/
 ## Credits for Img Loading
 @[**MapleMyth**](https://github.com/MapleMyth/) ~ forked from MapleMyth/ClientImageLoader
 
+@[**XIEJIASHU**](http://forum.ragezone.com/members/2000286887.html) ~ stdcall issue in IWzResMan_SetResMan.
+
 @[**buttbeam**](http://forum.ragezone.com/members/2000258756.html) ~ Everything? [Released this](https://gist.github.com/y785/3f13026d33b5a7f0edab0bd60f4eed36).
 
 @[**Darter**](http://forum.ragezone.com/members/450249.html) ~ This project is based on his [AuthHook](https://github.com/RajanGrewal/AuthHook/) release.
