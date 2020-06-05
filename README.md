@@ -41,7 +41,7 @@ Try to make it so you have the following structure:
 
 
 Now run your v83 game client and see the "magic" happen!
-<img src="https://i.imgur.com/mGEbhKL.png"  height="auto">
+<img src="https://i.imgur.com/UhZbDD6.png"  height="auto">
 
 This has been tested using HeavenMS (Credits to @[**Ronan**](https://github.com/ronancpl/HeavenMS/))
 
