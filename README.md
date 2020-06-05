@@ -16,16 +16,22 @@ There are a couple of advantages especially for WZ editors trying to get new con
 
 ## How
  1. You can compile this with VS 2015+ (i used Community). After you compile this project (resulting in a .DLL file) you need to inject it. Now, there are many ways to inject a .DLL file to your MapleStory client but this project is already configured with the APIDummy export method.
+ 
  2. Download CFF Explorer.
+ 
  3. Go to "File > Open" and select your "ijl15.dll" inside your MapleStory directory.
+ 
  4. Proceed to "Import Adder" and nearby the modules box, click "Add" to select the previously compiled .DLL file.
+ 
  5. Import the "APIDummy" from Exported functions to Imported functions, by Name or by Ordinal, any of them will work just fine.)
+ 
  <img src="https://i.imgur.com/sW2tKNQ.png"  height="auto">
  6. Click "Rebuild Import Table" then save the file.
     ( Now your client should automatically load with the compiled .DLL already injected and hooked to ijl15.dll )
+    
  7. Place the generated .dll in your MS v83 Folder.
- 7. Use [Stredit](http://forum.ragezone.com/f921/release-stredit-localhost-editor-810762/) to modify your v83 client's strings
-    "../Data" and "../DataT" to "Data" and "DataT".  (IDs: 2294 and 2295).
+ 
+ 8. Use [Stredit](http://forum.ragezone.com/f921/release-stredit-localhost-editor-810762/) to modify your v83 client's strings "../Data" and "../DataT" to "Data" and "DataT".  (IDs: 2294 and 2295).
 
 ## Lets try it!
 Now, make sure that you have List.wz in the same folder of your client.exe and the generated .dll hooked to your Ijl15.dll.
