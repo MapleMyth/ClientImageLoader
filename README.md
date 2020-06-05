@@ -52,3 +52,5 @@ This has been tested using HeavenMS (Credits to @[**Ronan**](https://github.com/
 @[**Darter**](http://forum.ragezone.com/members/450249.html) ~ This project is based on his [AuthHook](https://github.com/RajanGrewal/AuthHook/) release.
 
 @[**Eric**](http://forum.ragezone.com/members/801110.html "Eric is online now") ~ MapleMyth [learnt a lot](http://forum.ragezone.com/f921/src-universal-localhost-enabler-1137639-post8872554/#post8872554) from him.
+
+@[**Diamondo25**] (http://forum.ragezone.com/members/437824.html) ~ Stredit (2.9.5.0)
