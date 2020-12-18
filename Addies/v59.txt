@@ -1,15 +1,17 @@
 // Init
 CWvsApp__InitializeResMan = 0x008202e1
 
-// ResMan - (0x00000000) means unknown yet.
-get_rm = 0x009726f8
+// DWORD
+g_rm = 0x009726f8
+g_root = 0x009726f0
+pNameSpace = 0x009722b0
+
+// ResMan
 PcCreateObject_IWzResMan = 0x008231d7
 IWzResMan__SetResManParam = 0x00000000 (*g_rm + 0x14)
 
 // NameSpace
-get_root = 0x009726f0
 PcCreateObject_IWzNameSpace = 0x0082323c
-PcSetRootNameSpace = 0x009722b0
 IWZNameSpace__Mount = 0x00820a65
 
 // Filesystem
