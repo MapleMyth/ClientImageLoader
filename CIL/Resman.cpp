@@ -30,7 +30,9 @@ auto g_rm = (void**)0x000000;
 auto g_root = (void**)0x000000;
 auto pNameSpace = (int*)0x000000;
 
+// Disable Restrictions
 #pragma optimize("", off)
+
 BOOL Hook_InitializeResMan(BOOL bEnable) {
 
 	CWvsApp__InitializeResMan_t Hook = [](void*) {
@@ -86,4 +88,6 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 
 	return SetHook(bEnable, reinterpret_cast<void**>(&CWvsApp__InitializeResMan), Hook);
 }
+
+// Enable Restrictions
 #pragma optimize("", on)
