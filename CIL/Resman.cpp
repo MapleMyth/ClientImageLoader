@@ -47,14 +47,14 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		PcCreateObject_IWzResMan(L"ResMan", g_rm, pUnkOuter);
 
 		void* pIWzResMan_Instance = *g_rm;
-		auto IWzResMan__SetResManParam = *(void(__cdecl**)(void*, int, int, int))((*(int*)pIWzResMan_Instance) + 20); // Hard Coded Function (Find at "functions" directory)
+		auto IWzResMan__SetResManParam = *(void(__cdecl**)(void*, int, int, int))((*(int*)pIWzResMan_Instance) + 20); // Hard Coded
 		IWzResMan__SetResManParam(pIWzResMan_Instance, RC_AUTO_REPARSE | RC_AUTO_SERIALIZE, -1, -1);
 
 		// NameSpace
 		PcCreateObject_IWzNameSpace(L"NameSpace", g_root, pUnkOuter);
 
 		void* pIWzNameSpace_Instance = g_root;
-		auto PcSetRootNameSpace = (void(__cdecl*)(void*, int))*(int*)0x000000; // Hard Coded Function (Find at "functions" directory)
+		auto PcSetRootNameSpace = (void(__cdecl*)(void*, int))*(int*)0x000000; // Hard Coded
 		PcSetRootNameSpace(pIWzNameSpace_Instance, 1);
 
 		// Game FileSystem
