@@ -4,14 +4,14 @@ CWvsApp__InitializeResMan = 0x00826E13
 // DWORD
 g_rm = 0x0097C1A8
 g_root = 0x0097C1A0
-pNameSpace = 0x0097BC40
 
 // ResMan
 PcCreateObject_IWzResMan = 0x00829D96
-IWzResMan__SetResManParam = 0x00000000
+IWzResMan__SetResManParam = *(void(__cdecl**)(void*, int, int, int))((*(int*)pIWzResMan_Instance) + 20);
 
 // NameSpace
 PcCreateObject_IWzNameSpace = 0x00829DFB
+PcSetRootNameSpace = (void(__cdecl*)(void*, int))*(int*)0x0097BC40;
 IWZNameSpace__Mount = 0x0082752F
 
 // Filesystem
