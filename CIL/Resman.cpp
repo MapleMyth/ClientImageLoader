@@ -28,6 +28,7 @@ auto IWZNameSpace__Mount = (void*(__fastcall*)(void*, void*, void*, void*, void*
 // DWORD Address
 auto g_rm = (void**)0x000000;
 auto g_root = (void**)0x000000;
+auto pNameSpace = 0x000000;
 
 // Disable Restrictions
 #pragma optimize("", off)
@@ -37,6 +38,7 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 	CWvsApp__InitializeResMan_t Hook = [](void*) {
 
 		// Generic
+		void* pData = nullptr;
 		void* pFileSystem = nullptr;
 		void* pUnkOuter = 0;
 		void* nPriority = 0;
@@ -54,7 +56,7 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		PcCreateObject_IWzNameSpace(L"NameSpace", g_root, pUnkOuter);
 
 		void* pIWzNameSpace_Instance = g_root;
-		auto PcSetRootNameSpace = (void(__cdecl*)(void*, int))*(int*)0x000000; // Hard Coded
+		auto PcSetRootNameSpace = (void(__cdecl*)(void*, int))*(int*)pNameSpace; // Hard Coded
 		PcSetRootNameSpace(pIWzNameSpace_Instance, 1);
 
 		// Game FileSystem
@@ -65,24 +67,24 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		CWvsApp__Dir_BackSlashToSlash(sStartPath);
 		CWvsApp__Dir_upDir(sStartPath);
 
-		bstr_constructor(&sPath, nullptr, sStartPath);
+		bstr_constructor(&sPath, pData, sStartPath);
 
-		auto a = IWzFileSystem__Init(pFileSystem, nullptr, sPath);
+		auto a = IWzFileSystem__Init(pFileSystem, pData, sPath);
 
-		bstr_constructor(&sPath, nullptr, "/");
+		bstr_constructor(&sPath, pData, "/");
 
-		auto b = IWZNameSpace__Mount(*g_root, nullptr, sPath, pFileSystem, nPriority);
+		auto b = IWZNameSpace__Mount(*g_root, pData, sPath, pFileSystem, nPriority);
 
 		// Data FileSystem
 		PcCreateObject_IWzFileSystem(L"NameSpace#FileSystem", &pFileSystem, pUnkOuter);
 
-		bstr_constructor(&sPath, nullptr, base);
+		bstr_constructor(&sPath, pData, base);
 
-		auto c = IWzFileSystem__Init(pFileSystem, nullptr, sPath);
+		auto c = IWzFileSystem__Init(pFileSystem, pData, sPath);
 
-		bstr_constructor(&sPath, nullptr, "/");
+		bstr_constructor(&sPath, pData, "/");
 
-		auto d = IWZNameSpace__Mount(*g_root, nullptr, sPath, pFileSystem, nPriority);
+		auto d = IWZNameSpace__Mount(*g_root, pData, sPath, pFileSystem, nPriority);
 	};
 
 	return SetHook(bEnable, reinterpret_cast<void**>(&CWvsApp__InitializeResMan), Hook);

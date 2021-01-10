@@ -4,6 +4,7 @@ CWvsApp__InitializeResMan = 0x009F7159
 // DWORD
 g_rm = 0x00BF14E8
 g_root = 0x00BF14E0
+pNameSpace = 0x00BF0CD0
 
 // ResMan
 PcCreateObject_IWzResMan = 0x009FAF55
@@ -11,12 +12,12 @@ IWzResMan__SetResManParam = *(int(__stdcall **)(int, signed int, signed int, sig
 
 // NameSpace
 PcCreateObject_IWzNameSpace = 0x009FAFBA
-PcSetRootNameSpace = (*(int(__cdecl**)(DWORD, DWORD))0xBF0CD0;
+PcSetRootNameSpace = (*(int(__cdecl**)(DWORD, DWORD))pNameSpace;
 IWZNameSpace__Mount = 0x009F790A
 
 // Filesystem
 PcCreateObject_IWzFileSystem = 0x009FB01F
 CWvsApp__Dir_BackSlashToSlash = 0x009F95FE
 CWvsApp__Dir_upDir = 0x009F9644
-ztl_bstr_constructor = 0x00406301
+bstr_constructor = 0x00406301
 IWzFileSystem__Init = 0x009F7964
