@@ -1,5 +1,5 @@
 // Init
-CWvsApp__InitializeResMan = 0x00826E13
+CWvsApp__InitializeResMan = 0x00826DAB
 
 // DWORD
 g_rm = 0x0097C1A8

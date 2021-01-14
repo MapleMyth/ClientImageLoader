@@ -43,6 +43,7 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 		void* pUnkOuter = 0;
 		void* nPriority = 0;
 		void* sPath;
+		void* index = "/";
 		void* base = "./Data";
 
 		// Resman
@@ -69,22 +70,22 @@ BOOL Hook_InitializeResMan(BOOL bEnable) {
 
 		bstr_constructor(&sPath, pData, sStartPath);
 
-		auto a = IWzFileSystem__Init(pFileSystem, pData, sPath);
+		auto iGameFS = IWzFileSystem__Init(pFileSystem, pData, sPath);
 
-		bstr_constructor(&sPath, pData, "/");
+		bstr_constructor(&sPath, pData, index);
 
-		auto b = IWZNameSpace__Mount(*g_root, pData, sPath, pFileSystem, nPriority);
+		auto mGameFS = IWZNameSpace__Mount(*g_root, pData, sPath, pFileSystem, nPriority);
 
 		// Data FileSystem
 		PcCreateObject_IWzFileSystem(L"NameSpace#FileSystem", &pFileSystem, pUnkOuter);
 
 		bstr_constructor(&sPath, pData, base);
 
-		auto c = IWzFileSystem__Init(pFileSystem, pData, sPath);
+		auto iDataFS = IWzFileSystem__Init(pFileSystem, pData, sPath);
 
-		bstr_constructor(&sPath, pData, "/");
+		bstr_constructor(&sPath, pData, index);
 
-		auto d = IWZNameSpace__Mount(*g_root, pData, sPath, pFileSystem, nPriority);
+		auto mDataFS = IWZNameSpace__Mount(*g_root, pData, sPath, pFileSystem, nPriority);
 	};
 
 	return SetHook(bEnable, reinterpret_cast<void**>(&CWvsApp__InitializeResMan), Hook);
