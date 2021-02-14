@@ -1,4 +1,4 @@
-Hey everyone! its Arufonsu/Thora, you probably heard a bit from me as a small Contributor in HeavenMS... Anyway..
+Hey everyone! its Arufonsu, you probably heard a bit from me as a small Contributor in HeavenMS as "Thora"... Anyway..
 
 # Client Image Loader
 Client Image Loader is a DLL that can be injected into a MapleStory v83 client to load from image data files.
